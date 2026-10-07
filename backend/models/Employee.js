@@ -11,7 +11,8 @@ const EmployeeSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        lowercase: true
+        lowercase: true,
+        unique: true
     },
     department: {
         type: String,

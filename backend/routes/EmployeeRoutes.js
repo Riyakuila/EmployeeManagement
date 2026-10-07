@@ -26,6 +26,11 @@ router.post('/', async (req, res) => {
             employee
         });
     } catch (error) {
+        if (error.code === 11000) {
+            return res.status(409).json({
+                message: 'Employee with this email already exists'
+            });
+        }
         res.status(500).json({
             message:'Failed to create employee',
             error: error.message
