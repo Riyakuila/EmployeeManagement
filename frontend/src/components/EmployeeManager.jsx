@@ -68,8 +68,7 @@ function EmployeeManager() {
             setEditingId(null);
             fetchEmployees();
         } catch (error) {
-            console.log(error);
-            toast.error("Something went wrong");
+            error.response?.data?.message || "Something went wrong"
         }
     };
 
