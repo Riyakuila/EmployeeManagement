@@ -29,15 +29,7 @@ function EmployeeManager() {
     };
 
     useEffect(() => {
-        const loadEmployees = async () => {
-            try {
-                const response = await getEmployees();
-                setEmployees(response.data.employees);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        loadEmployees();
+        fetchEmployees();
     }, []);
 
     const handleChange = (e) => {
